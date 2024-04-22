@@ -1,0 +1,598 @@
+Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/vKhonshu/intro2/main/ui2"))()
+		local NotifyLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/vKhonshu/intro/main/ui"))()
+		NotifyLib.prompt('Nova leak (MOBILE)', 'Leaked By GrxveTys', 5)
+
+
+
+
+getgenv().Nova = { -- // Some Stuff Isnt Working Due To Errors.
+Options = {
+['Key'] = "Testtest.",
+['Intro'] = true, -- // Currently Broken?
+['Version'] = "Latest", -- // Latest Only Or Script Breaks.
+['Intro_Type'] = "Funny" -- // "Notification", "Funny"
+},
+Silent = {
+['Enabled'] = true,
+['Key'] = "q",
+['Type'] = "Target", -- // Target, FOV
+['HitChance'] = 400, 
+['ThirdPerson'] = true,
+['FirstPerson'] = true,
+['Prediction'] = 0.13873,
+['Ignore_Parts'] = false, -- // Wip
+['Ignore_Parts'] = {"Parts"},
+['HitPart'] = "HumanoidRootPart",
+['HitPart_Type'] = "Normal", -- // Normal
+['UseKeyBind'] = true,
+['Notifications'] = true,
+['AirShot_Function'] = true,
+['Airshot_Part'] = "UpperTorso"
+},
+FOV = {
+['Silent'] = {
+['Visible'] = False,
+['Filled'] = false,
+['Sides'] = 100,
+['Size'] = 100.5,
+['Transparency'] = 1,
+['Thickness'] = 0.7,
+['Color'] = Color3.fromRGB(1, 1, 1),
+},
+Aimbot = {
+['UseFov'] = true,
+['Visible'] = false,
+['Filled'] = false,
+['Sides'] = 20,
+['Size'] = 100,
+['Transparency'] = 1,
+['Thickness'] = 1,
+['Color'] = Color3.fromRGB(0, 0, 0)
+
+},
+}, 
+FOV_Types = {
+['Target'] = true,
+},
+Aimbot = { -- // Universal.
+['Enabled'] = true,
+['HitPart_Type'] = "Normal", -- // Normal
+['Key'] = "Q",
+['Prediction'] = 0.12,
+['HitPart'] = "Head",
+['Airshot_Function'] = false,
+['Airshot_HitPart'] = "LowerTorso",
+['Distance'] = 12322423,
+['Smoothing'] = false,
+['Smoothness'] = 0.012
+},
+Shake = { -- // Keep This On.
+['Shake'] = true,
+['Shake_X'] = 0, -- // X
+['Shake_Y'] = 0, -- // Y
+['Shake_Z'] = 0 -- // Z
+},
+Easing = { 
+['Style'] = "Put Ur Easing Style Here", -- // Easing Styles
+['Direction'] = "Put Ur Easing Direction Here", -- // Easing Directions
+}, 
+MemSpoofer = { -- // This Also Spoofs F9 Memory.
+['Enabled'] = true,
+['Most'] = 100,
+['Least'] = 50
+},
+Checks = { -- Da Hood Checks.
+Silent = {
+['Knocked'] = true, -- // 
+['Crew'] = true, -- // Checks IF Player Is In The Same Crew As You.
+['Wall'] = false, -- // Wall Check For Silent, Aim Assist.
+['Friend'] = true, -- // Checks The Tab Thing To See If Plr Is Your Friend.
+['Grabbed'] = true, -- // Checks If Player Is Grabbed.
+['Anti_Curve'] = true -- X, Y, Z Stuff + Uses Character NOT Mouse.
+},
+Aimbot = {
+['Wall'] = false, -- // Wall Check For Silent, Aim Assist.
+['Knocked'] = true, -- // 
+
+}
+},
+Cmds = {
+['Enabled'] = true,
+['FOV_Type'] = "Silent", -- // Silent, Aimbot
+['FOV_Size'] = "/f", -- // Fov Radius
+['Predict_Type'] = "Silent", -- // "Silent", "Aimbot"
+['Pred_Value'] = "!P",
+}, 
+AntiGroundShots = {
+['Enabled'] = true,
+['Delay'] = 0.5
+},
+Resolver = { 
+['Anti_Aim_Viewer'] = true,
+['Enabled'] = true, -- // WIP
+['Type'] = "Recalculation" -- // Recalculation, Direction, Velocity
+},
+AutoPrediction = {
+['Enabled'] = false,
+['RefreshRate'] = 0.1,
+['Ping_10'] = 0.10,
+['Ping_20'] = 0.11,
+['Ping_30'] = 0.12,
+['Ping_40'] = 0.123,
+['Ping_50'] = 0.125,
+['Ping_60'] = 0.127,
+['Ping_70'] = 0.133,
+['Ping_80'] = 0.134,
+['Ping_90'] = 0.1365,
+['Ping_100'] = 0.1374,
+['Ping_110'] = 0.12,
+['Ping_120'] = 0.12,
+['Ping_130'] = 0.12,
+['Ping_140'] = 0.13,
+['Ping_150'] = 0.1405,
+},
+Text = {
+['Enabled'] = true,
+['Size'] = 12,
+['Position'] = "bottomleft",
+
+
+},
+}
+
+-- // Holders
+local NotificationHolder = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Module.Lua"))()
+local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Client.Lua"))()
+-- // Noti function
+
+local function SendNotification(text)
+Notification:Notify(
+{Title = "Nova | Public Version", Description = ".gg/externals | "..text},
+{OutlineColor = Color3.fromRGB(111,111,111),Time = 3, Type = "image"},
+{Image = "http://www.roblox.com/asset/?id=13233563081", ImageColor = Color3.fromRGB(255,255,255)}
+)
+end 
+
+SendNotification("Injecting.")
+wait(1)
+SendNotification("Loading Assets.")
+wait(1)
+SendNotification("Bypassing Anticheat... ")
+wait(1)
+SendNotification("Loading Into Workspace...")
+wait(3)
+SendNotification("Injected!")
+
+--
+if getgenv().CheckIfScriptLoaded == true then
+
+SendNotification("Loaded Settings.")
+return
+end
+
+getgenv().CheckIfScriptLoaded = true
+
+
+if not LPH_OBFUSCATED then
+LPH_JIT_MAX = function(...)
+return (...)
+end
+LPH_NO_VIRTUALIZE = function(...)
+return (...)
+end
+end
+
+local StarterGui = game:GetService("StarterGui")
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+local Client = LocalPlayer
+local Character = LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()
+local GetPlayers = Players.GetPlayers
+local Mouse = LocalPlayer:GetMouse()
+local RunService = game:GetService("RunService")
+local Camera = game.Workspace.CurrentCamera
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+local TPservice= game:GetService("TeleportService")
+local GetPlayers = Players.GetPlayers
+local Mouse = LocalPlayer:GetMouse()
+local Workspace = game:GetService("Workspace")
+local GuiService = game:GetService("GuiService")
+local CurrentCamera = Workspace.CurrentCamera
+local TeleportService = game:GetService("TeleportService")
+local GetGuiInset = GuiService.GetGuiInset
+local Circle1 = Drawing.new("Circle")
+local Circle2 = Drawing.new("Circle")
+local Plr,Plr2,IsTargetting
+
+function WallCheck (destination, ignore)
+if (getgenv().Nova.Checks.Silent.Wall) then
+local Origin = Camera.CFrame.p
+local CheckRay = Ray.new(Origin, destination - Origin)
+local Hit = game:GetService("Workspace"):FindPartOnRayWithIgnoreList(CheckRay, ignore)
+return Hit == nil
+else
+return true
+end
+end
+
+local WTS = (function(Object)
+local ObjectVector = CurrentCamera:WorldToScreenPoint(Object.Position)
+return Vector2.new(ObjectVector.X, ObjectVector.Y)
+end)
+
+local Filter = (function(obj)
+if (obj:IsA('BasePart')) then
+return true
+end
+end)
+
+local MousePosVector2 = (function()
+return Vector2.new(Mouse.X, Mouse.Y) 
+end)
+
+
+
+
+function SilentFOV()
+if not (Circle2) then
+return
+end
+Circle2.Visible = getgenv().Nova.FOV.Silent.Visible
+Circle2.Radius = getgenv().Nova.FOV.Silent.Size * 2.1
+Circle2.Position = Vector2.new(Mouse.X, Mouse.Y + GetGuiInset(GuiService).Y)
+Circle2.Filled = getgenv().Nova.FOV.Silent.Filled
+Circle2.Transparency = getgenv().Nova.FOV.Silent.Transparency
+Circle2.Thickness = getgenv().Nova.FOV.Silent.Thickness
+Circle2.NumSides = getgenv().Nova.FOV.Silent.Sides
+Circle2.Color = getgenv().Nova.FOV.Silent.Color
+return Circle2
+end
+RunService.Heartbeat:Connect(function() AimbotFOV() SilentFOV()end)
+
+
+function AimbotFOV()
+if not (Circle1) then
+return
+end
+Circle1.Visible = getgenv().Nova.FOV.Aimbot.Visible
+Circle1.Radius = getgenv().Nova.FOV.Aimbot.Size * 2.1
+Circle1.Position = Vector2.new(Mouse.X, Mouse.Y + GetGuiInset(GuiService).Y)
+Circle1.Filled = getgenv().Nova.FOV.Aimbot.Filled
+Circle1.Transparency = getgenv().Nova.FOV.Aimbot.Transparency
+Circle1.Thickness = getgenv().Nova.FOV.Aimbot.Thickness
+Circle1.NumSides = getgenv().Nova.FOV.Aimbot.Sides
+Circle1.Color = getgenv().Nova.FOV.Aimbot.Color
+return Circle1
+end
+
+local ClosestPlrFromMouse = function()
+local Target = nil
+Closest = 1 / 0
+for _ ,v in ipairs(Players:GetPlayers()) do
+if (v.Character and v ~= Client and v.Character:FindFirstChild("HumanoidRootPart")) and WallCheck(v.Character.HumanoidRootPart.Position, {Client, v.Character}) then
+local Position, OnScreen = Camera:WorldToScreenPoint(v.Character.HumanoidRootPart.Position)
+local Distance = (Vector2.new(Position.X, Position.Y) - Vector2.new(Mouse.X, Mouse.Y)).Magnitude
+if (Circle2.Radius > Distance and Distance < Closest and OnScreen and Position) then
+Closest = Distance
+Target = v
+end
+end
+end
+return Target
+end
+
+local GetClosestBodyPart = (function()
+local ShortestDistance = math.huge
+local BodyPart = nil
+for _, v in next, game.Players:GetPlayers() do
+if (v ~= Client and v.Character and v.Character:FindFirstChild("Humanoid")) then
+for k, x in next, v.Character:GetChildren() do
+if (Filter(x)) then
+local Distance = (WTS(x) - MousePosVector2()).magnitude
+if (Distance < ShortestDistance) then
+ShortestDistance = Distance
+BodyPart = x
+end
+end
+end
+end
+end
+return BodyPart
+end)
+
+
+
+if getgenv().Nova.Aimbot.Airshot_Function == true then
+if Plr.Character.Humanoid.Jump == true and Plr.Character.Humanoid.FloorMaterial == Enum.Material.Air then
+getgenv().Nova.Aimbot.HitPart = getgenv().Nova.Aimbot.Airshot_HitPart
+else
+Plr.Character:WaitForChild("Humanoid").StateChanged:Connect(function(old,new)
+if new == Enum.HumanoidStateType.Freefall then
+getgenv().Nova.Aimbot.HitPart = getgenv().Nova.Aimbot.Airshot_HitPart
+else
+getgenv().Nova.Aimbot.HitPart = getgenv().Nova.Aimbot.HitPart
+end
+end)
+end
+end
+
+Mouse.KeyDown:Connect(function(Key)
+local Keybind = getgenv().Nova.Aimbot.Key:lower()
+if (Key == Keybind) then
+if getgenv().Nova.Aimbot.Enabled == true then
+IsTargetting = not IsTargetting
+if IsTargetting then
+Plr = NearestPerson()
+else
+if Plr ~= nil then
+Plr = nil
+end
+end
+end
+end
+end)
+
+
+if getgenv().Nova.FOV.Aimbot.UseFov == true then
+function NearestPerson()
+local closestPlayer
+local shortestDistance = getgenv().Nova.FOV.Aimbot.Size
+for i, v in ipairs(game.Players:GetPlayers()) do
+pcall(function()
+if v ~= game.Players.LocalPlayer and v.Character and
+v.Character:FindFirstChild("Humanoid") and WallCheck(v.Character.HumanoidRootPart.Position, {Client, v.Character}) then
+local pos = CurrentCamera:WorldToViewportPoint(v.Character.PrimaryPart.Position)
+local magnitude =
+(Vector2.new(pos.X, pos.Y) - Vector2.new(Mouse.X, Mouse.Y)).magnitude
+if (Vector2.new(pos.X, pos.Y) - Vector2.new(Mouse.X, Mouse.Y)).magnitude < shortestDistance then
+closestPlayer = v
+shortestDistance = magnitude
+end
+end
+end)
+end
+return closestPlayer
+end
+
+elseif getgenv().Nova.FOV.Aimbot.UseFov == false then
+function NearestPerson()
+local closestPlayer
+local shortestDistance = getgenv().Nova.Aimbot.Distance
+for i, v in ipairs(game.Players:GetPlayers()) do
+pcall(function()
+if v ~= game.Players.LocalPlayer and v.Character and
+v.Character:FindFirstChild("Humanoid") and WallCheck(v.Character.HumanoidRootPart.Position, {Client, v.Character}) then
+local pos = CurrentCamera:WorldToViewportPoint(v.Character.PrimaryPart.Position)
+local magnitude =
+(Vector2.new(pos.X, pos.Y) - Vector2.new(Mouse.X, Mouse.Y)).magnitude
+if (Vector2.new(pos.X, pos.Y) - Vector2.new(Mouse.X, Mouse.Y)).magnitude < shortestDistance then
+closestPlayer = v
+shortestDistance = magnitude
+end
+end
+end)
+end
+return closestPlayer
+end
+end
+
+
+
+RunService.RenderStepped:Connect(function()
+if getgenv().Nova.Aimbot.Enabled == true and Plr and Plr.Character ~= nil then
+if getgenv().Nova.Shake.Shake then
+local Main = CFrame.new(Camera.CFrame.p,Plr.Character[getgenv().Nova.Aimbot.HitPart].Position + Plr.Character[getgenv().Nova.Aimbot.HitPart].Velocity*getgenv().Nova.Aimbot.Prediction +
+Vector3.new(
+math.random(-getgenv().Nova.Shake.Shake_X,getgenv().Nova.Shake.Shake_X),
+math.random(-getgenv().Nova.Shake.Shake_Y,getgenv().Nova.Shake.Shake_Z),
+math.random(-getgenv().Nova.Shake.Shake_Z,getgenv().Nova.Shake.Shake_Z)
+)*1)
+Camera.CFrame = Camera.CFrame:Lerp(Main,getgenv().Nova.Aimbot.Smoothness,Enum.EasingStyle.Sine,Enum.EasingDirection.InOut,Enum.EasingStyle.Bounce,Enum.EasingDirection.Out,Enum.EasingStyle.Exponential,Enum.EasingDirection.Out)
+else
+local Main = CFrame.new(Camera.CFrame.p,Plr.Character[getgenv().Nova.Aimbot.HitPart].Position + Plr.Character[getgenv().Nova.Aimbot.HitPart].Velocity*getgenv().Nova.Aimbot.Prediction)
+Camera.CFrame = Camera.CFrame:Lerp(Main,getgenv().Nova.Aimbot.Smoothness,Enum.EasingStyle[getgenv().Nova.Easing.Style],Enum.EasingDirection[getgenv().Nova.Easing.Direction])
+end
+end
+end)
+
+RunService.Heartbeat:Connect(function()
+if getgenv().Nova.Aimbot.Enabled == true and Plr and Plr.Character ~= nil then
+if getgenv().Nova.Checks.Aimbot.Knocked then
+if Plr.Character.BodyEffects["K.O"].Value then Plr = nil 
+end
+end
+end
+end)
+
+
+local grmt = getrawmetatable(game)
+local backupindex = grmt.__index
+setreadonly(grmt, false)
+
+grmt.__index = newcclosure(function(self, v)
+if (getgenv().Nova.Silent.Enabled and Mouse and tostring(v) == "Hit") then
+Plr2 = ClosestPlrFromMouse()
+if Plr2 then
+local endpoint = game.Players[tostring(Plr2)].Character[getgenv().Nova.Silent.HitPart].CFrame + (
+game.Players[tostring(Plr2)].Character[getgenv().Nova.Silent.HitPart].Velocity *getgenv().Nova.Silent.Prediction
+)
+return (tostring(v) == "Hit" and endpoint)
+end
+end
+return backupindex(self, v)
+end)
+
+RunService.RenderStepped:Connect(function()
+if getgenv().Nova.Aimbot.Smoothing and getgenv().Nova.Aimbot.Enabled == true then
+local Main = CFrame.new(workspace.CurrentCamera.CFrame.p, Plr.Character[getgenv().Nova.Aimbot.HitPart].Position + Plr.Character[getgenv().Nova.Aimbot.HitPart].Velocity*getgenv().Nova.Aimbot.Prediction)
+workspace.CurrentCamera.CFrame = workspace.CurrentCamera.CFrame:Lerp(Main,getgenv().Nova.Aimbot.Smoothness,Enum.EasingStyle[getgenv().Nova.Easing.Style],Enum.EasingDirection[getgenv().Nova.Easing.Direction])
+elseif getgenv().Nova.Aimbot.Smoothing == false and getgenv().Nova.Aimbot.Enabled == true then
+workspace.CurrentCamera.CFrame = CFrame.new(workspace.CurrentCamera.CFrame.Position, Plr.Character[getgenv().Nova.Aimbot.HitPart].Position + Plr.Character[getgenv().Nova.Aimbot.HitPart].Velocity*getgenv().Nova.Aimbot.Prediction)
+end
+end)
+
+
+Client.Chatted:Connect(function(message)
+if getgenv().Nova.Cmds.Enabled then
+local args = string.split(message, " ")
+if args[1] == getgenv().Nova.Cmds.FOV_Size and getgenv().Nova.Cmds.FOV_Type == "Silent" and args[2] ~= nil then
+getgenv().Nova.FOV.Silent.Size = tonumber(args[2])
+elseif args[1] == getgenv().Nova.Cmds.FOV_Size and getgenv().Nova.Cmds.FOV_Type == "Aimbot" and args[2] ~= nil then
+getgenv().Nova.FOV.Aimbot.Size = tonumber(args[2])
+end
+
+if getgenv().Nova.Cmds.Enabled then
+local args = string.split(message, " ")
+if args[1] == getgenv().Nova.Cmds.Pred_Value and getgenv().Nova.cmds.Predict_Type == "Silent" and args[2] ~= nil then
+getgenv().Nova.Silent.Prediction = tonumber(args[2])
+elseif args[1] == getgenv().Nova.Cmds.Pred_Value and getgenv().Nova.cmds.Predict_Type == "Aimbot" and args[2] ~= nil then
+getgenv().Nova.Aimbot.Prediction = tonumber(args[2])
+end
+end
+end
+end)
+
+Mouse.KeyDown:Connect(
+function(Key)
+if getgenv().Nova.Silent.UseKeyBind then
+if (Key == getgenv().Nova.Silent.Key:lower()) then
+if getgenv().Nova.Silent.Enabled == true then
+getgenv().Nova.Silent.Enabled = false
+SendNotification("Silent Disabled.")
+else
+getgenv().Nova.Silent.Enabled = true
+SendNotification("Silent Enabled.")
+end
+end
+end
+end
+)
+
+-- grabbed checks
+
+if getgenv().Nova.Checks.Silent.Grabbed == true and player and player.Character then
+if player.Character:FindFirstChild("GRABBING_CONSTRAINT") then
+return true
+end
+end
+
+if getgenv().Nova.Checks.Silent.Crew == true then
+while true do
+local newPlayer = game.Players.PlayerAdded:wait()
+if player:IsInGroup(newPlayer.Group) then
+table.insert(Ignored.Players, newPlayer)
+end
+end
+end
+
+
+function TargetChecks(Target)
+if getgenv().Nova.Checks.Silent.Knocked == true and Target.Character then
+return Target.Character.BodyEffects["K.O"].Value and true or false
+end
+return false
+end
+
+
+function Anti_Curve()
+local character = game.Players.LocalPlayer.Character
+if getgenv().Nova.Checks.Silent.Anti_Curve and character and character.PrimaryPart then
+local characterCf = character.PrimaryPart.CFrame
+local target = self.Character.HumanoidRootPart
+local targetPos = target.Position
+local charPos = character.PrimaryPart.Position
+character:SetPrimaryPartCFrame(CFrame.lookAt(charPos, v3(targetPos.X, charPos.Y, targetPos.Z)))
+wait()
+character:SetPrimaryPartCFrame(characterCf)
+end
+end
+
+
+
+
+if getgenv().Nova.Checks.Silent.Friend then
+if table.find(Script.Friends, Target.UserId) then
+return nil
+end
+end
+
+
+local function AntiGroundShots()
+if self ~= nil and getgenv().Nova.AntiGroundShots.Enabled and self.Character.Humanoid:GetState() == Enum.HumanoidStateType.Freefall then
+local currentvelocity = self.Character.HumanoidRootPart.Velocity
+self.Character.HumanoidRootPart.Velocity = Vector3.new(currentvelocity.X, currentvelocity.Y / getgenv().Nova.AntiGroundShots.Delay, currentvelocity.Z)
+end
+end
+while getgenv().Nova.AutoPrediction.Enabled == true do
+local Ping = game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString()
+local pingNumber = string.split(Ping, " ")[1] -10
+if pingNumber < 10 then
+getgenv().Nova.Silent.Prediction = getgenv().Nova.AutoPrediction.Ping_10
+elseif pingNumber < 20 then
+getgenv().Nova.Silent.Prediction = getgenv().Nova.AutoPrediction.Ping_20
+elseif pingNumber < 30 then
+getgenv().Nova.Silent.Prediction = getgenv().Nova.AutoPrediction.Ping_30
+elseif pingNumber < 40 then
+getgenv().Nova.Silent.Prediction = getgenv().Nova.AutoPrediction.Ping_40
+elseif pingNumber < 50 then
+getgenv().Nova.Silent.Prediction = getgenv().Nova.AutoPrediction.Ping_50
+elseif pingNumber < 60 then
+getgenv().Nova.Silent.Prediction = getgenv().Nova.AutoPrediction.Ping_60
+elseif pingNumber < 70 then
+getgenv().Nova.Silent.Prediction = getgenv().Nova.AutoPrediction.Ping_70
+elseif pingNumber < 80 then
+getgenv().Nova.Silent.Prediction = getgenv().Nova.AutoPrediction.Ping_80
+elseif pingNumber < 90 then
+getgenv().Nova.Silent.Prediction = getgenv().Nova.AutoPrediction.Ping_90
+elseif pingNumber < 100 then
+getgenv().Nova.Silent.Prediction = getgenv().Nova.AutoPrediction.Ping_100
+elseif pingNumber < 110 then
+getgenv().Nova.Silent.Prediction = getgenv().Nova.AutoPrediction.Ping_110 + 0.02
+elseif pingNumber < 120 then
+getgenv().Nova.Silent.Prediction = getgenv().Nova.AutoPrediction.Ping_120 + 0.03
+elseif pingNumber < 130 then
+getgenv().Nova.Silent.Prediction = getgenv().Nova.AutoPrediction.Ping_130 + 0.04
+elseif pingNumber < 140 then
+getgenv().Nova.Silent.Prediction = getgenv().Nova.AutoPrediction.Ping_140 + 0.05
+elseif pingNumber < 150 then
+getgenv().Nova.Silent.Prediction = getgenv().Nova.AutoPrediction.Ping_150 
+end
+wait(getgenv().Nova.AutoPrediction.RefreshRate)
+end
+
+if getgenv().Nova.Options.Intro and getgenv().Nova.Options.Intro_Type == "Notification" then
+
+elseif getgenv().Nova.Options.Intro and getgenv().Nova.Options.Intro_Type == "Funny" then
+local intro = true
+
+if intro then
+
+local Sound = Instance.new("Sound")
+
+Sound.SoundId = "http://www.roblox.com/asset/?id=13107447842"
+Sound.Volume = 5
+Sound.Parent = game.Workspace
+
+Sound:play()
+
+local Image = Drawing.new("Image")
+local Screen = workspace.CurrentCamera.ViewportSize
+
+Image.Data = game:HttpGet("https://i.imgur.com/ZCy6Pcd.png")
+Image.Visible = true
+Image.Transparency = 1
+Image.Position = Vector2.new(0,0)
+Image.Size = Vector2.new(Screen.X,Screen.Y)
+
+task.wait(1.2)
+
+for i = 1, 100 do
+Image.Transparency = 1 - (i / 110)
+task.wait(0.01)
+end
+
+Image:Remove()
+
+end
+end
